@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картини по номерах</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Картини по номерах</h1>
+        <div class="cart">
+            <span>Графік продажей</span>
+            <span id="cart-count">0</span>
+            <button id="view-cart-btn">Кошик</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="filter-panel">
+            <label for="size-filter">Фільтр по розміру:</label>
+            <select id="size-filter">
+                <option value="all">Усі</option>
+                <option value="small">Мала</option>
+                <option value="medium">Середня</option>
+                <option value="large">Велика</option>
+            </select>
+        </div>
+        <div class="cards-container" id="cards-container">
+            <!-- Картки елементів тут -->
+        </div>
+    </div>
+    <div id="subscribe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Підпишіться на наші новини, щоб отримувати останні оновлення!</p>
+            <input type="email" id="email-input" placeholder="Введіть ваш email">
+            <button id="subscribe-btn">Підписатися</button>
+            <button id="close-btn">Закрити</button>
+        </div>
+    </div>
+    <div id="ad-modal" class="modal">
+    <div class="modal-content">
+        <p>Рейтинг продажу деяких товарів</p>
+        <div id="ad-chart"></div> 
+        <span id="close-ad" class="close">&times;</span>
+    </div>
+</div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ваш кошик</h2>
+            <div id="filter-options">
+                <label for="sort-by">Сортувати за:</label>
+                <select id="sort-by">
+                    <option value="name">Назва</option>
+                    <option value="priceAsc">Ціна (зростання)</option>
+                    <option value="priceDesc">Ціна (спадання)</option>
+                </select>
+
+                <label for="price-range">Ціновий діапазон:</label>
+                <select id="price-range">
+                    <option value="all">Усі ціни</option>
+                    <option value="200-240">200-240 грн</option>
+                    <option value="240-300">240-300 грн</option>
+                    <option value="101-500">101-500 грн</option>
+                </select>
+            </div>
+            <div id="cart-items"></div>
+            <p id="total-cost" class="total-cost"></p>
+            <button id="close-cart-btn">Закрити</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
